@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+    <meta charset="UTF-8">
+    <title>Авторизация</title>
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #bbbbbb;
+            border: 1px solid #383838;
+            border-radius: 10px;
+        }
+        h2, h5 {
+            text-align: center;
+        }
+        input {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #383838;
+            margin: 10px 0;
+        }
+        input[type="submit"] {
+            background-color: #4eb733;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Авторизация</h2>
+    <h5>Еще нет аккаунта? <a th:href="@{/registration}">Зарегистрироваться</a></h5>
+    <form th:action="@{/login}" method="post">
+        <input type="text" name="username" placeholder="Введите логин">
+        <input type="password" name="password" placeholder="Введите пароль">
+
+        <input type="submit" value="Войти">
+    </form>
+</div>
+
+</body>
+</html>
